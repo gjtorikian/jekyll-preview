@@ -44,12 +44,8 @@ exports.toHTML = (text='', filePath, grammar, renderLaTeX, callback) ->
     callback(null, html)
 
 render = (text, filePath, renderLaTeX, callback) ->
-  callbackFunction = (error, html) ->
-    return callback(error) if error?
-    callback(null, html)
-
   jekyllIt ?= require './jekyll-it-helper'
-  callbackFunction null, jekyllIt.render(filePath)
+  jekyllIt.render(filePath, callback)
 
 srcClosure = (src) ->
   return (event, path) ->
