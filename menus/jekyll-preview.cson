@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle jekyll-preview'
+      'command': 'jekyll-preview:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'jekyll-preview'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'jekyll-preview:toggle'
+        }
+      ]
+    ]
+  }
+]
